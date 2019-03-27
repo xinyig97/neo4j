@@ -8,6 +8,8 @@ import java.util.Collection;
 
 public interface MovieRepository extends Neo4jRepository<Movie,Long> {
 
-    @Query("MATCH (m:Movie) RETURN m")
-    Collection<Movie> getAllMovies();
+    Collection<Movie> findAll();
+
+    Movie findByTitle(String name);
+
 }
